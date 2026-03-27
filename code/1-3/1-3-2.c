@@ -1,7 +1,10 @@
 #include "util.h"
 #include <stdio.h>
 
-extern void logger_global(char *message);
+void logger_global(char *message) {
+  static int counter = 0;
+  printf("log %2d: %s\n", counter++, message);
+}
 
 void task2() {
   for (int i = 0; i < 4; i++) {
